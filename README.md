@@ -10,3 +10,13 @@ Primary questions to explore:
 
 In this hypothetical scenario. The executive leadership wants to understand the root cause of attrition and develop data driven strategies to improve employee retention, engagement and overall satisfaction.
 As a HR analyst, your role is to analyze employee data and uncover actionable insights that can support strategic decision making.
+**Tasks to perform: **
+Data Cleaning:
+Add primary key
+Deleting redundant columns.
+Renaming the columns.
+Dropping duplicates.
+Cleaning individual columns.
+Remove the NaN values from the dataset
+
+
