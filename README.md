@@ -8,8 +8,33 @@ Primary questions to explore:
 - What is the relationship between income, job role, and attrition?
 - How do years of service affect promotion rates and attrition?
 
+Defining data points: JobSatisfaction
+1 'Low'
+2 'Medium'
+3 'High'
+4 'Very High'
+
+PerformanceRating
+1 'Low'
+2 'Good'
+3 'Excellent'
+4 'Outstanding'
+
+RelationshipSatisfaction
+1 'Low'
+2 'Medium'
+3 'High'
+4 'Very High'
+
+WorkLifeBalance
+1 'Bad'
+2 'Good'
+3 'Better'
+4 'Best'
+
 In this hypothetical scenario. The executive leadership wants to understand the root cause of attrition and develop data driven strategies to improve employee retention, engagement and overall satisfaction.
 As a HR analyst, your role is to analyze employee data and uncover actionable insights that can support strategic decision making.
+
 **Tasks to perform: **
 Data Cleaning:
 Add primary key
