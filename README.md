@@ -118,5 +118,4 @@ ORDER BY WorkLifeBalance, attrition_rate_percentage desc;
 
 Further analysis conducted on Tableau.
 
-
-
+P.S. The employee Payroll data is undefined. Hourly rate, monthly rate and daily pay data does not align mathematically. I will be using Monthly Income as salary indicator.
