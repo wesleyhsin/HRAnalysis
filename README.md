@@ -19,4 +19,49 @@ Dropping duplicates.
 Cleaning individual columns.
 Remove the NaN values from the dataset
 
+SQL codes
+use hr_data;
+
+-- rename column
+ALTER TABLE hr_employee
+RENAME COLUMN ï»¿Age to Age;
+
+SELECT *
+FROM hr_employee;
+
+-- Give each row a distinct employeeID
+Alter TABLE hr_employee
+ADD column id INT AUTO_INCREMENT PRIMARY KEY;
+
+-- Overall attrition rate
+SELECT 
+SUM(CASE WHEN Attrition = 'Yes' THEN 1 else 0 END) as count_yes,
+SUM(CASE WHEN Attrition = 'No' THEN 1 else 0 END) as count_no,
+COUNT(*) as total_employees,
+(SUM(CASE WHEN Attrition = 'Yes' THEN 1 else 0 END) *100/ COUNT(*)) as attrition_rate_perc
+FROM hr_employee;
+![image](https://github.com/user-attachments/assets/b453897b-7bcb-4b70-bb48-0333c2d5e9c6)
+
+-- Attrition rate for male and female
+SELECT 
+gender,
+SUM(CASE WHEN Attrition = 'Yes' THEN 1 else 0 END) as count_yes,
+SUM(CASE WHEN Attrition = 'No' THEN 1 else 0 END) as count_no,
+COUNT(*) as total_employees,
+(SUM(CASE WHEN Attrition = 'Yes' THEN 1 else 0 END) *100/ COUNT(*)) as attrition_rate_perc
+FROM hr_employee
+GROUP BY gender;
+![image](https://github.com/user-attachments/assets/475a552c-a633-4a87-aa9d-5ed8c146e792)
+
+-- Attrition rate for department
+SELECT 
+department,
+SUM(CASE WHEN Attrition = 'Yes' THEN 1 else 0 END) as count_yes,
+SUM(CASE WHEN Attrition = 'No' THEN 1 else 0 END) as count_no,
+COUNT(*) as total_employees,
+(SUM(CASE WHEN Attrition = 'Yes' THEN 1 else 0 END) *100/ COUNT(*)) as attrition_rate_perc
+FROM hr_employee
+GROUP BY department;
+![image](https://github.com/user-attachments/assets/c0fe60d1-3cbf-4be6-b35f-4ceb60c5edbf)
+
 
