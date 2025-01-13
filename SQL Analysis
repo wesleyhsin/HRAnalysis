@@ -1,0 +1,21 @@
+use hr_data;
+
+-- rename column
+ALTER TABLE hr_employee
+RENAME COLUMN ï»¿Age to Age;
+
+SELECT *
+FROM hr_employee;
+
+-- Give each row a distinct employeeID
+Alter TABLE hr_employee
+ADD column id INT AUTO_INCREMENT PRIMARY KEY;
+
+-- Overall attrition rate
+SELECT 
+SUM(CASE WHEN Attrition = 'Yes' THEN 1 else 0 END) as count_yes,
+SUM(CASE WHEN Attrition = 'No' THEN 1 else 0 END) as count_no,
+COUNT(*) as total_employees,
+(SUM(CASE WHEN Attrition = 'Yes' THEN 1 else 0 END) *100/ COUNT(*)) as attrition_rate_perc
+FROM hr_employee;
+
