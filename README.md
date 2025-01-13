@@ -72,4 +72,51 @@ GROUP BY department;
 
 ![image](https://github.com/user-attachments/assets/c0fe60d1-3cbf-4be6-b35f-4ceb60c5edbf)
 
+-- Finding relationship between job satisfaction and attrition
+
+SELECT 
+    JobSatisfaction,
+    COUNT(*) AS total_employees,
+    SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) AS attrition_count,
+    (SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS attrition_rate_percentage
+FROM hr_employee
+GROUP BY JobSatisfaction
+ORDER BY JobSatisfaction;
+
+![image](https://github.com/user-attachments/assets/8691a6b3-08af-4af8-b16c-ede9acfc48a9)
+
+-- job satisfaction by departments
+
+SELECT 
+	department,
+    JobSatisfaction,
+    COUNT(*) AS total_employees,
+    SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) AS attrition_count,
+    (SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS attrition_rate_percentage
+FROM hr_employee
+GROUP BY department,JobSatisfaction
+ORDER BY JobSatisfaction desc, attrition_rate_percentage desc;
+
+![image](https://github.com/user-attachments/assets/aa3e3e7d-c69f-41c8-9e76-320a74702a53)
+
+There looks to be a correlation between job satisfaction and attrition rate.
+There are also significant difference in attrition rate between each department with sales department coming up with highest overall attrition rate.
+
+-- Work life balance between departments and attrition rate
+
+SELECT 
+	Department,
+    WorkLifeBalance,
+    COUNT(*) AS total_employees,
+    SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) AS attrition_count,
+    (SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS attrition_rate_percentage
+FROM hr_employee
+GROUP BY department, WorkLifeBalance
+ORDER BY WorkLifeBalance, attrition_rate_percentage desc;
+
+![image](https://github.com/user-attachments/assets/76e5d1a1-7193-4a6f-93ed-f57d7797344f)
+
+Further analysis conducted on Tableau.
+
+
 
