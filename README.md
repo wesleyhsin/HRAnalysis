@@ -1,5 +1,6 @@
 # HRAnalysis
 
+Data Source: https://www.kaggle.com/datasets/rishikeshkonapure/hr-analytics-prediction/data 
 Objective: Determine key insights related to employee attrition, satisfaction, and performance.
 
 Primary questions to explore:
